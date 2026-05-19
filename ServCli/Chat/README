@@ -1,0 +1,25 @@
+Instrucciones de uso
+0. Pasos previos si estas en windows
+- Instalar wsl con comando: wsl --install
+- Una vez instalado reinicie el Pc si es necesario
+- Instalar Ubuntu con comando: wsl --install -d Ubuntu
+- Si es su primera vez procederá a crearse un usuario y una contraseña
+- Una vez instalado es necesario instalar el gcc y e  make: 
+	sudo apt update
+	sudo apt install build-essential
+- Una vez hecho esto seguir el resto de pasos 
+1. Archivos guardados en una misma carpeta
+- serv7.c
+- cli7.c
+- Makefile
+2. Compilación
+Abrir un terminal en la carpeta anterior y ejecutar comando : make
+Esto creará los ejecutables serv7 y cli7
+3. Iniciar el servidor
+En un terminal, ejecutar el servidor especificando un puerto : ./serv7 12345
+Si todo ha ido bien se verá un mensaje como 'Servidor iniciado en el puerto 12345. Esperando conexiones ...'
+4. Inicar a los clientes
+Abriendo uno o varios terminales nuevos (uno por cada cliente) ejecutar: ./cli7 127.0.0.1 12345
+# En el caso de no estar en la misma máquina hay que usar la IP real del servidor
+Una vez ejecutado el comando se pedirá un nick de cliente (nombre de usuario)
+# Si el nick no está repetido será aceptado sino se rechazará
