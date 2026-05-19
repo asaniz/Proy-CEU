@@ -1,0 +1,24 @@
+Instrucciones de uso
+0. Pasos previos si estas en windows
+- Instalar wsl con comando: wsl --install
+- Una vez instalado reinicie el Pc si es necesario
+- Instalar Ubuntu con comando: wsl --install -d Ubuntu
+- Si es su primera vez procederá a crearse un usuario y una contraseña
+- Una vez instalado es necesario instalar el gcc y el  make: 
+	sudo apt update
+	sudo apt install build-essential
+- Una vez hecho esto seguir el resto de pasos 
+1. Archivos guardados en una misma carpeta
+- docs --> (- ARCHITECTURE - INSTALL - README -USER)
+- include --> (- protocol.h)
+- src --> (- cli7.c - serv7.c - protocol.c)
+- Makefile
+2. Compilación
+Abrir un terminal en la carpeta anterior y ejecutar comando : make
+Esto creará los ejecutables serv7 y cli7 y el directorio obj con los archivos (- cli7.o - serv7.o - protocol.o)
+3. Iniciar el servidor
+En un terminal, ejecutar el servidor especificando un puerto : ./serv7 -p 12345 -d 4
+Si todo ha ido bien se verá un mensaje como 'Servidor iniciado en el puerto 12345. Esperando conexiones ...'
+4. Inicar a los clientes
+Abriendo uno o varios terminales nuevos (uno por cada cliente) ejecutar: ./cli7 -n NICK -p 12345
+# Si el nick no está repetido será aceptado sino se rechazará
